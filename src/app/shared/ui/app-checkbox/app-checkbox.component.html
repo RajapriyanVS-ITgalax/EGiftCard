@@ -1,0 +1,6 @@
+<ion-checkbox [labelPlacement]="labelPlacement()" [checked]="!!value()" [disabled]="disabled()"
+  (ionChange)="onValueChange($event)" (ionBlur)="markTouched()">
+  <span style="text-wrap: auto;">
+    {{ label() }}
+  </span>
+</ion-checkbox>

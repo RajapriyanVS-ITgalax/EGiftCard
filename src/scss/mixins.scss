@@ -1,0 +1,109 @@
+@use './variables.scss';
+
+// Mixin for spacing utilities
+@mixin generate-spacing-utilities($sizes, $property, $name) {
+  @for $i from 1 through $sizes {
+    $size: $i * 1px;
+
+    // General spacing
+    .#{$property}#{$i} {
+      #{$name}: $size !important;
+    }
+
+    // Specific cases for padding and margin
+    @if $property == 'p' or $property == 'm' {
+      .#{$property}t#{$i} {
+        #{$name}-top: $size !important;
+      }
+
+      .#{$property}b#{$i} {
+        #{$name}-bottom: $size !important;
+      }
+
+      .#{$property}l#{$i} {
+        #{$name}-left: $size !important;
+      }
+
+      .#{$property}r#{$i} {
+        #{$name}-right: $size !important;
+      }
+
+      .#{$property}x#{$i} {
+        #{$name}-left: $size !important;
+        #{$name}-right: $size !important;
+      }
+
+      .#{$property}y#{$i} {
+        #{$name}-top: $size !important;
+        #{$name}-bottom: $size !important;
+      }
+    }
+  }
+}
+
+// Mixin for width and height utilities with units
+@mixin generate-dimension-utilities-with-units($sizes, $prefix, $css-property, $unit) {
+  @each $size in $sizes {
+    .#{$prefix}#{$size} {
+      #{$css-property}: #{$size}#{$unit} !important;
+    }
+  }
+}
+
+// Mixin for typography utilities
+@mixin generate-font-utilities($sizes, $weights) {
+  @for $i from 1 through $sizes {
+    .fs#{$i} {
+      font-size: #{$i}px !important;
+    }
+  }
+
+  // Generate font-weight utilities
+  @each $key, $value in $weights {
+    .fw#{$key} {
+      font-weight: #{$value} !important;
+    }
+  }
+}
+
+// Mixin for generating flexbox utilities
+@mixin generate-flexbox-utilities($options, $prefix, $property) {
+  @each $key, $value in $options {
+    .#{$prefix}-#{$key} {
+      #{$property}: $value !important;
+    }
+  }
+}
+
+// Mixin for generating text alignment utilities
+@mixin generate-text-alignment-utilities($options, $property) {
+  @each $key, $value in $options {
+    .#{$property}-#{$key} {
+      #{$property}: $value !important;
+    }
+  }
+}
+
+@mixin v-flex($displayType: 'column') {
+  @if $displayType == 'column' {
+    display: flex;
+    flex-direction: column !important;
+  } @else if $displayType == 'row' {
+    display: flex;
+    flex-direction: row !important;
+  } @else if $displayType == 'flex' {
+    display: flex;
+  } @else if $displayType == 'contents' {
+    display: contents;
+  } @else if $displayType == 'inline-flex' {
+    display: inline-flex;
+  } @else {
+    display: block !important; // Fallback for other cases
+  }
+}
+
+@mixin reset-selector {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}

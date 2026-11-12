@@ -1,0 +1,72 @@
+ion-content {
+  --background: #0a6cc4;
+}
+
+.cover {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: calc(var(--ion-safe-area-top, 0px) + 32px) 24px calc(var(--ion-safe-area-bottom, 0px) + 40px);
+  color: #fff;
+  background:
+    linear-gradient(180deg, rgba(9, 78, 140, 0.35) 0%, rgba(0, 0, 0, 0) 40%, rgb(9 78 140 / 0%) 100%),
+    url(/assets/images/splash.jpg) center / cover no-repeat;
+}
+
+.brand {
+  display: flex;
+  align-items: end;
+  gap: 10px;
+  font-size: 30px;
+  font-weight: 800;
+
+  img {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+  }
+
+  small {
+    font-size: inherit;
+    font-weight: 400;
+    opacity: 0.9;
+  }
+}
+
+h1 {
+  margin: 0;
+  max-width: 300px;
+  text-align: center;
+  font-size: 30px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-shadow:
+    0 1px 2px #fff8e6,
+    0 0 12px color-mix(in oklab, #fff8e6 65%, transparent);
+  color: #083a61;
+  font-family: Caveat, cursive;
+  transform: rotate(-18deg);
+}
+
+.actions {
+  width: 100%;
+  max-width: 360px;
+}
+
+.cta {
+  display: block;
+  padding: 13px;
+  margin: 0pc 30px;
+  border-radius: var(--app-radius);
+  background: #ffffff1f;
+  // bac: no-repeat;
+  color: #fff;
+  text-align: center;
+  font-weight: 700;
+  text-decoration: none;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(10px);
+}

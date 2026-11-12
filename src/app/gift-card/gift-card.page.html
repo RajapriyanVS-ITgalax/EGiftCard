@@ -1,0 +1,73 @@
+<app-brand-header></app-brand-header>
+
+<ion-content [fullscreen]="true">
+  @if (card(); as card) {
+  <div class="hero" [style.--card-color]="card.color"
+    [style.--card-image]="card.image ? 'url(' + card.image + ')' : null">
+    <button type="button" class="round" aria-label="Back" (click)="back()"><i class="ri-arrow-left-s-line"></i></button>
+    <div class="right">
+      <button type="button" class="cart-pill" aria-label="Cart" (click)="openCart()">
+        <i class="ri-shopping-cart-2-line"></i>@if (cart.count() > 0) {<b>{{ cart.count() }}</b>}
+      </button>
+      <button type="button" class="round" aria-label="Favourite" [class.on]="favourite()"
+        (click)="favourite.set(!favourite())">
+        <i [class]="favourite() ? 'ri-heart-fill' : 'ri-heart-line'"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="body">
+    <h1>{{ card.name }}</h1>
+    <p class="cat"><i class="ri-price-tag-3-line"></i> {{ card.category }}
+      @if (card.deliveryLabel) { <span class="delivery">· {{ card.deliveryLabel }}</span> }
+    </p>
+    <p class="range">{{ card.minAmount | currency }} – {{ card.maxAmount | currency }}</p>
+    <p class="desc">{{ card.description }}</p>
+
+    <fieldset class="packages">
+      <legend>Choose Voucher Package <span>Select 1 option</span></legend>
+      @for (package of packages(); track $index; let i = $index) {
+      <label class="package" [class.active]="i === selectedPackageIndex()">
+        <span class="package-content">
+          @if (package.badge) {
+          <span class="package-badges"><span class="package-badge">{{ package.badge }}</span>
+            @if (package.badgeDetail) { <span class="badge-detail">{{ package.badgeDetail }}</span> }
+          </span>
+          }
+          <span class="package-name">{{ package.name }}</span>
+          @if (package.description) { <span class="package-description">{{ package.description }}</span> }
+        </span>
+        <span class="package-price">{{ package.amount | currency }}</span>
+        <input type="radio" name="voucher-amount" [value]="i" [checked]="i === selectedPackageIndex()"
+          (change)="selectedPackageIndex.set(i)">
+        @if (package.validity || package.note) {
+        <span class="package-details">
+          @if (package.validity) { <span><i class="ri-time-line"></i> {{ package.validity }}</span> }
+          @if (package.note) { <span>{{ package.note }}</span> }
+        </span>
+        }
+      </label>
+      }
+    </fieldset>
+
+    <p class="label">Quantity</p>
+    <div class="quantity-row">
+      <div class="qty">
+        <button type="button" aria-label="Decrease quantity" [disabled]="quantity() === 1" (click)="changeQuantity(-1)">
+          <i class="ri-subtract-line"></i>
+        </button>
+        <span>{{ quantity() }}</span>
+        <button type="button" aria-label="Increase quantity" [disabled]="quantity() === 10" (click)="changeQuantity(1)">
+          <i class="ri-add-line"></i>
+        </button>
+      </div>
+      <span class="quantity-hint">Max. 10 vouchers per selection</span>
+    </div>
+
+    <button type="button" class="add" (click)="addToCart()"><i class="ri-shopping-cart-2-line"></i> Add to Cart
+      <span aria-hidden="true">·</span> {{ amount() * quantity() | currency }}</button>
+  </div>
+  } @else {
+  <p class="missing">Gift card not found. <button type="button" class="link" (click)="back()">Back to home</button></p>
+  }
+</ion-content>

@@ -1,0 +1,50 @@
+<ion-content [fullscreen]="true">
+  <div class="auth">
+    <button type="button" class="back" aria-label="Back" (click)="back()"><i class="ri-arrow-left-s-line"></i></button>
+
+    <div class="brand">
+      <img src="assets/images/logo.png" alt="" />
+      <span>Kauwai <small>EGift</small></span>
+    </div>
+
+    <h1>Welcome Back!</h1>
+    <p class="subtitle">Login to your account</p>
+
+    <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+      <app-input [pill]="true" icon="ri-smartphone-line" label="Mobile Number" type="number" [maxlength]="10"
+        formControlName="mobile" [errorTrue]="errorTrue()"
+        [errorMessages]="{ required: 'Enter your mobile number', pattern: 'Enter a valid mobile number (7-10 digits)' }"></app-input>
+
+      @if (pinSent()) {
+      <app-input [pill]="true" icon="ri-lock-password-line" label="6-digit PIN" type="tel"
+        placeholder="Enter 6-digit PIN" [maxlength]="6" formControlName="pin" [errorTrue]="errorTrue()"
+        [errorMessages]="{ required: 'Enter the PIN', pattern: 'PIN must be 6 digits' }"></app-input>
+      <p class="demo">Demo: your login PIN is <strong>{{ demoPin() }}</strong> (SMS will be connected later).</p>
+      <p class="hint">
+        PIN sent to {{ form.value.mobile }}.
+        <button type="button" class="link" (click)="sendPin()">Resend PIN</button>
+      </p>
+      <app-checkbox class="check" label="Remember me" formControlName="remember"></app-checkbox>
+      }
+
+
+      @if (error()) {
+      <p class="error">{{ error() }}</p>
+      }
+
+      <app-button type="submit" color="accent" [pill]="true">{{ pinSent() ? 'Verify PIN & Login' : 'Send PIN'
+        }}</app-button>
+    </form>
+
+    <p class="divider">OR</p>
+    <div class="alt">
+      <app-button variant="outline" [pill]="true" icon="ri-fingerprint-line" (pressed)="loginWithBiometrics()">Login
+        with Biometrics</app-button>
+      <app-button variant="outline" [pill]="true" icon="ri-google-fill"
+        (pressed)="comingSoon('Google sign-in')">Continue with Google</app-button>
+    </div>
+
+    <p class="switch">Don't have an account? <a routerLink="/register" queryParamsHandling="preserve">Register</a></p>
+    <div class="wave"></div>
+  </div>
+</ion-content>

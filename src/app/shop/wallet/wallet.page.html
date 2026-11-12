@@ -1,0 +1,36 @@
+<app-brand-header></app-brand-header>
+
+<ion-content [fullscreen]="true">
+  <div class="wrap">
+    <div class="balance">
+      <i class="ri-wallet-3-line"></i>
+      <p>Available Balance</p>
+      <h2>${{ checkout.walletBalance() }}.00</h2>
+    </div>
+
+    @if (checkout.walletItems().length === 0) {
+    <p class="empty">No gift cards in your wallet yet.</p>
+    <a class="pill-btn accent" routerLink="/gift-cards">Browse Gift Cards</a>
+    } @else {
+    <p class="title">My Gift Cards</p>
+    <div class="list">
+      @for (item of checkout.walletItems(); track $index) {
+      <div class="gift">
+        <span class="thumb" [style.background-image]="item.image ? 'url(' + item.image + ')' : null"></span>
+        <div class="info">
+          <b>{{ item.name }}</b>
+          <small>{{ item.reference }} · {{ item.date | date: 'mediumDate' }}</small>
+        </div>
+        <em>${{ item.amount * item.quantity }}</em>
+      </div>
+      }
+    </div>
+    } @if (!auth.isLoggedIn()) {
+    <p class="hint">
+      Log in to see gifts sent to you. <a routerLink="/login" [queryParams]="{ redirect: '/wallet' }">Log in</a>
+    </p>
+    }
+  </div>
+</ion-content>
+
+<ion-footer><app-tab-bar></app-tab-bar></ion-footer>

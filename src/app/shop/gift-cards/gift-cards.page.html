@@ -1,0 +1,30 @@
+<app-brand-header></app-brand-header>
+
+<ion-content [fullscreen]="true">
+  <div class="tabs-row">
+    @for (category of categories(); track category.name) {
+    <button type="button" class="tab" [class.active]="category.name === selected()"
+      (click)="selected.set(category.name)">
+      {{ category.name }}
+    </button>
+    }
+  </div>
+
+  <div class="list">
+    @for (card of cards(); track card.id) {
+    <a class="item" [routerLink]="['/gift-cards', card.id]">
+      <span class="thumb" [style.background-image]="card.image ? 'url(' + card.image + ')' : null"></span>
+      <span class="text">
+        <b>{{ card.name }}</b>
+        <small>{{ card.category }}@if (card.location) { • {{ card.location }} }</small>
+        <em>${{ card.minAmount }} - ${{ card.maxAmount }}</em>
+      </span>
+      <i class="ri-arrow-right-s-line"></i>
+    </a>
+    } @empty {
+    <p class="empty">No gift cards found.</p>
+    }
+  </div>
+</ion-content>
+
+<ion-footer><app-tab-bar></app-tab-bar></ion-footer>

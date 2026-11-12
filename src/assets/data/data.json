@@ -1,0 +1,404 @@
+﻿{
+  "app": {
+    "name": "Kauwai EGift",
+    "tagline": "The Perfect Gift for Every Occasion",
+    "splashDurationMs": 2500
+  },
+  "categories": [
+    { "name": "All", "icon": "ri-gift-line", "color": "#0b6cc4" },
+    { "name": "Food & Dining", "icon": "ri-restaurant-line", "color": "#f7941d" },
+    { "name": "Shopping", "icon": "ri-shopping-bag-line", "color": "#12b5a0" },
+    { "name": "Lifestyle", "icon": "ri-sparkling-2-line", "color": "#e8323c" }
+  ],
+  "promotions": [
+    { "id": "fiji-flavours", "title": "Get More from Your Gift!", "giftCardId": "fiji-flavours" },
+    { "id": "suva-city-mall", "title": "Treat Someone Special", "giftCardId": "suva-city-mall" },
+    { "id": "island-beauty-spa", "title": "Relax. Recharge. Gift.", "giftCardId": "island-beauty-spa" }
+  ],
+  "giftCards": [
+    {
+      "id": "fiji-flavours",
+      "image": "assets/images/cards/fiji-flavours.jpg",
+      "location": "Suva",
+      "description": "Enjoy fresh island seafood and traditional Fijian flavours at Fiji Flavours Restaurant. Perfect for celebrations, casual dinners, or as an unforgettable gift.",
+      "deliveryLabel": "Instant Delivery",
+      "packages": [
+        {
+          "id": "island-feast",
+          "name": "Island Feast Dining Pass",
+          "amount": 50,
+          "description": "Valid on all a la carte menu & drinks • Dine-in only",
+          "badge": "Most Popular",
+          "badgeDetail": "Save 10%",
+          "validity": "Valid for 6 months from purchase",
+          "note": "Code issued instantly"
+        },
+        {
+          "id": "tropical-tasting",
+          "name": "Tropical Tasting Experience",
+          "amount": 100,
+          "description": "Includes 4-course chef tasting + tropical cocktail pairing",
+          "badge": "Best Value",
+          "validity": "Valid for 12 months",
+          "note": "Priority reservations"
+        },
+        {
+          "id": "quick-bites",
+          "name": "Quick Bites & Lunch Credit",
+          "amount": 25,
+          "description": "Ideal for weekday island lunch bowls & cold refreshments",
+          "validity": "Valid for 3 months",
+          "note": "Walk-ins welcome"
+        }
+      ],
+      "name": "Fiji Flavours Restaurant",
+      "initials": "FF",
+      "category": "Food & Dining",
+      "minAmount": 25,
+      "maxAmount": 100,
+      "color": "#d9480f"
+    },
+    {
+      "id": "gourmet-kitchen",
+      "image": "assets/images/cards/gourmet-kitchen.jpg",
+      "location": "Nadi",
+      "description": "Fine dining with premium steaks and chef-crafted dishes at The Gourmet Kitchen. Perfect for special occasions, romantic dinners, or a memorable dining experience.",
+      "deliveryLabel": "Instant Delivery",
+      "packages": [
+        {
+          "id": "signature-steak",
+          "name": "Signature Steak Dining Pass",
+          "amount": 10,
+          "description": "Enjoy premium steaks and selected sides • Dine-in only",
+          "validity": "Valid for 3 months",
+          "note": "Code issued instantly"
+        },
+        {
+          "id": "gourmet-dining",
+          "name": "Gourmet Dining Experience",
+          "amount": 25,
+          "description": "Enjoy chef-crafted dishes and selected beverages",
+          "badge": "Most Popular",
+          "badgeDetail": "Great Choice",
+          "validity": "Valid for 6 months",
+          "note": "Reservations recommended"
+        },
+        {
+          "id": "premium-feast",
+          "name": "Premium Gourmet Feast",
+          "amount": 50,
+          "description": "Enjoy premium steaks, chef specials and desserts",
+          "badge": "Best Value",
+          "validity": "Valid for 12 months",
+          "note": "Priority reservations"
+        },
+        {
+          "id": "ultimate-dining",
+          "name": "Ultimate Dining Experience",
+          "amount": 100,
+          "description": "A complete fine dining experience with premium menu selections",
+          "validity": "Valid for 12 months",
+          "note": "Perfect for celebrations"
+        }
+      ],
+      "name": "The Gourmet Kitchen",
+      "initials": "GK",
+      "category": "Food & Dining",
+      "minAmount": 10,
+      "maxAmount": 100,
+      "color": "#8a5a00"
+    },
+    {
+      "id": "suva-city-mall",
+      "image": "assets/images/cards/suva-city-mall.jpg",
+      "location": "Suva",
+      "description": "Shop fashion, electronics, homeware and more at Suva City Mall's many stores. The perfect gift for shopping lovers and families.",
+      "deliveryLabel": "Instant Delivery",
+      "packages": [
+        {
+          "id": "shopping-starter",
+          "name": "Shopping Starter Voucher",
+          "amount": 20,
+          "description": "Perfect for everyday shopping and lifestyle essentials",
+          "validity": "Valid for 3 months",
+          "note": "Code issued instantly"
+        },
+        {
+          "id": "shopping-favourite",
+          "name": "Shopping Favourite Voucher",
+          "amount": 50,
+          "description": "Explore fashion, accessories and everyday shopping favourites",
+          "badge": "Most Popular",
+          "badgeDetail": "Shop More",
+          "validity": "Valid for 6 months",
+          "note": "Redeem at participating stores"
+        },
+        {
+          "id": "premium-shopping",
+          "name": "Premium Shopping Voucher",
+          "amount": 100,
+          "description": "Enjoy more shopping choices across fashion, electronics and homeware",
+          "badge": "Best Value",
+          "validity": "Valid for 12 months",
+          "note": "Redeem at participating stores"
+        }
+      ],
+      "name": "Suva City Mall",
+      "initials": "SC",
+      "category": "Shopping",
+      "minAmount": 20,
+      "maxAmount": 200,
+      "color": "#094e8c"
+    },
+    {
+      "id": "island-beauty-spa",
+      "image": "assets/images/cards/island-beauty-spa.jpg",
+      "location": "Suva",
+      "description": "Relax and recharge with massages, facials and spa treatments at Island Beauty Spa. A thoughtful gift for anyone who deserves a little pampering.",
+      "deliveryLabel": "Instant Delivery",
+      "packages": [
+        {
+          "id": "relaxing-massage",
+          "name": "Relaxing Massage Voucher",
+          "amount": 25,
+          "description": "Enjoy a relaxing massage session and a refreshing escape",
+          "validity": "Valid for 3 months",
+          "note": "Appointment recommended"
+        },
+        {
+          "id": "beauty-refresh",
+          "name": "Beauty Refresh Experience",
+          "amount": 50,
+          "description": "Choose from selected facials and rejuvenating treatments",
+          "badge": "Most Popular",
+          "badgeDetail": "Relax & Refresh",
+          "validity": "Valid for 6 months",
+          "note": "Appointment required"
+        },
+        {
+          "id": "luxury-spa",
+          "name": "Luxury Spa Experience",
+          "amount": 100,
+          "description": "Enjoy premium spa treatments and a complete relaxation experience",
+          "badge": "Best Value",
+          "validity": "Valid for 12 months",
+          "note": "Priority bookings"
+        },
+        {
+          "id": "ultimate-wellness",
+          "name": "Ultimate Beauty & Wellness",
+          "amount": 150,
+          "description": "A premium self-care experience with selected massages and beauty treatments",
+          "validity": "Valid for 12 months",
+          "note": "Advance booking recommended"
+        }
+      ],
+      "name": "Island Beauty Spa",
+      "initials": "IB",
+      "category": "Lifestyle",
+      "minAmount": 25,
+      "maxAmount": 150,
+      "color": "#a61e6b"
+    },
+    {
+      "id": "fiji-travel-tours",
+      "image": "assets/images/cards/fiji-travel-tours.jpg",
+      "location": "Nadi",
+      "description": "Island tours, resort getaways and unforgettable travel experiences with Fiji Travel & Tours. Give someone the gift of exploring beautiful Fiji.",
+      "deliveryLabel": "Instant Delivery",
+      "packages": [
+        {
+          "id": "island-explorer",
+          "name": "Island Explorer Pass",
+          "amount": 50,
+          "description": "Enjoy selected island sightseeing tours and local experiences",
+          "validity": "Valid for 6 months",
+          "note": "Advance booking required"
+        },
+        {
+          "id": "tropical-adventure",
+          "name": "Tropical Adventure Experience",
+          "amount": 100,
+          "description": "Discover island adventures and selected guided tour experiences",
+          "badge": "Most Popular",
+          "badgeDetail": "Explore Fiji",
+          "validity": "Valid for 12 months",
+          "note": "Subject to availability"
+        },
+        {
+          "id": "resort-escape",
+          "name": "Resort Escape Voucher",
+          "amount": 150,
+          "description": "Enjoy a relaxing resort getaway and selected leisure experiences",
+          "badge": "Best Value",
+          "validity": "Valid for 12 months",
+          "note": "Reservations required"
+        },
+        {
+          "id": "ultimate-fiji",
+          "name": "Ultimate Fiji Experience",
+          "amount": 250,
+          "description": "A premium travel gift for island tours, resort stays and unforgettable adventures",
+          "validity": "Valid for 12 months",
+          "note": "Advance reservations required"
+        }
+      ],
+      "name": "Fiji Travel & Tours",
+      "initials": "FT",
+      "category": "Lifestyle",
+      "minAmount": 50,
+      "maxAmount": 250,
+      "color": "#0b7285"
+    },
+    {
+      "id": "spice-island-cafe",
+      "image": "assets/images/cards/spice-island-cafe.jpg",
+      "location": "Lautoka",
+      "description": "Aromatic curries and spiced island favourites at Spice Island Café. Perfect for food lovers looking to enjoy delicious meals and refreshing drinks.",
+      "deliveryLabel": "Instant Delivery",
+      "packages": [
+        {
+          "id": "cafe-treat",
+          "name": "Cafe Treat Voucher",
+          "amount": 10,
+          "description": "Enjoy delicious snacks and refreshing beverages",
+          "validity": "Valid for 3 months",
+          "note": "Code issued instantly"
+        },
+        {
+          "id": "spiced-lunch",
+          "name": "Spiced Island Lunch",
+          "amount": 25,
+          "description": "Perfect for curries, rice meals and island lunch favourites",
+          "badge": "Most Popular",
+          "badgeDetail": "Customer Favourite",
+          "validity": "Valid for 6 months",
+          "note": "Dine-in and takeaway"
+        },
+        {
+          "id": "family-feast",
+          "name": "Island Family Feast",
+          "amount": 50,
+          "description": "Enjoy a delicious selection of cafe favourites with family and friends",
+          "badge": "Best Value",
+          "validity": "Valid for 12 months",
+          "note": "Perfect for sharing"
+        },
+        {
+          "id": "cafe-delight",
+          "name": "Cafe Delight Experience",
+          "amount": 80,
+          "description": "Enjoy a complete dining experience with selected meals and beverages",
+          "validity": "Valid for 12 months",
+          "note": "Reservations recommended"
+        }
+      ],
+      "name": "Spice Island Café",
+      "initials": "SI",
+      "category": "Food & Dining",
+      "minAmount": 10,
+      "maxAmount": 80,
+      "color": "#b02a37"
+    },
+    {
+      "id": "coral-coast-fashion",
+      "image": "assets/images/cards/coral-coast-fashion.jpg",
+      "location": "Sigatoka",
+      "description": "Island style and the latest fashion for everyone at Coral Coast Fashion. A perfect gift for anyone who loves clothing, accessories and shopping.",
+      "deliveryLabel": "Instant Delivery",
+      "packages": [
+        {
+          "id": "fashion-starter",
+          "name": "Fashion Starter Voucher",
+          "amount": 20,
+          "description": "Discover everyday fashion and stylish accessories",
+          "validity": "Valid for 3 months",
+          "note": "Code issued instantly"
+        },
+        {
+          "id": "style-favourite",
+          "name": "Style Favourite Voucher",
+          "amount": 50,
+          "description": "Refresh your wardrobe with the latest island fashion",
+          "badge": "Most Popular",
+          "badgeDetail": "Trending Choice",
+          "validity": "Valid for 6 months",
+          "note": "Redeem in-store"
+        },
+        {
+          "id": "premium-fashion",
+          "name": "Premium Fashion Voucher",
+          "amount": 100,
+          "description": "Shop premium clothing, footwear and fashion accessories",
+          "badge": "Best Value",
+          "validity": "Valid for 12 months",
+          "note": "Redeem in-store"
+        },
+        {
+          "id": "ultimate-style",
+          "name": "Ultimate Style Voucher",
+          "amount": 150,
+          "description": "Enjoy a complete fashion shopping experience with more choices",
+          "validity": "Valid for 12 months",
+          "note": "Perfect for gifting"
+        }
+      ],
+      "name": "Coral Coast Fashion",
+      "initials": "CC",
+      "category": "Shopping",
+      "minAmount": 20,
+      "maxAmount": 150,
+      "color": "#5f3dc4"
+    },
+    {
+      "id": "bula-wellness",
+      "image": "assets/images/cards/bula-wellness.jpg",
+      "location": "Nadi",
+      "description": "Yoga, wellness and self-care sessions at Bula Wellness Studio. The perfect gift for anyone looking to relax, recharge and embrace a healthier lifestyle.",
+      "deliveryLabel": "Instant Delivery",
+      "packages": [
+        {
+          "id": "wellness-intro",
+          "name": "Wellness Starter Pass",
+          "amount": 25,
+          "description": "Enjoy an introductory yoga or wellness session",
+          "validity": "Valid for 3 months",
+          "note": "Advance booking recommended"
+        },
+        {
+          "id": "yoga-essentials",
+          "name": "Yoga Essentials Pass",
+          "amount": 50,
+          "description": "Access selected yoga classes and guided wellness sessions",
+          "badge": "Most Popular",
+          "badgeDetail": "Find Your Balance",
+          "validity": "Valid for 6 months",
+          "note": "Class reservations required"
+        },
+        {
+          "id": "wellness-retreat",
+          "name": "Wellness Retreat Experience",
+          "amount": 100,
+          "description": "Enjoy a collection of yoga, mindfulness and self-care sessions",
+          "badge": "Best Value",
+          "validity": "Valid for 12 months",
+          "note": "Subject to availability"
+        },
+        {
+          "id": "ultimate-wellness-pass",
+          "name": "Ultimate Wellness Pass",
+          "amount": 120,
+          "description": "A premium wellness experience with selected classes and self-care activities",
+          "validity": "Valid for 12 months",
+          "note": "Advance booking recommended"
+        }
+      ],
+      "name": "Bula Wellness Studio",
+      "initials": "BW",
+      "category": "Lifestyle",
+      "minAmount": 25,
+      "maxAmount": 120,
+      "color": "#2b8a3e"
+    }
+  ]
+}

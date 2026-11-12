@@ -1,0 +1,33 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <div class="bar">
+      <span class="brand"
+        style="display: flex; align-items: center; color: var(--ion-color-primary); font-weight: bold;">
+        <button type="button" class="back" aria-label="Back" (click)="back()">
+          <i class="ri-arrow-left-s-line"></i>
+        </button>
+        Payment
+      </span>
+    </div>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <div class="wrap">
+    <app-steps [current]="2"></app-steps>
+    <p class="title">Choose Payment Method</p>
+
+    <div class="methods" role="radiogroup" aria-label="Payment method">
+      @for (m of methods; track m.id) {
+      <button type="button" role="radio" class="method" [class.active]="checkout.payment() === m.id"
+        [attr.aria-checked]="checkout.payment() === m.id" (click)="checkout.payment.set(m.id)">
+        <i [class]="m.icon"></i>
+        <span><b>{{ m.id }}</b><small>{{ m.hint }}</small></span>
+        <i class="tick" [class]="checkout.payment() === m.id ? 'ri-checkbox-circle-fill' : 'ri-circle-line'"></i>
+      </button>
+      }
+    </div>
+
+    <p class="secure"><i class="ri-shield-check-line"></i> Your payment is secure and protected.</p>
+    <button type="button" class="pill-btn accent" (click)="next()">Continue to Review</button>
+  </div>
+</ion-content>

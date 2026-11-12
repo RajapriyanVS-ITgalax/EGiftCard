@@ -1,0 +1,155 @@
+@use './mixins.scss' as *;
+@use './variables.scss' as *;
+@use './responsive-mixin.scss' as *;
+
+@include generate-spacing-utilities($sizes, 'p', 'padding'); // For padding
+@include generate-spacing-utilities($sizes, 'm', 'margin'); // For margin
+@include generate-spacing-utilities($sizes, 'gap', 'gap'); // For gap
+@include generate-dimension-utilities-with-units($percent-sizes, 'w', 'width', '%'); // Width percentage
+@include generate-dimension-utilities-with-units($sizesBasedOnPx, 'wp', 'width', 'px'); // Width PX
+@include generate-dimension-utilities-with-units($percent-sizes, 'maxW', 'max-width', '%'); // max-Width percentage
+@include generate-dimension-utilities-with-units($percent-sizes, 'minW', 'min-width', '%'); // min-Width percentage
+@include generate-dimension-utilities-with-units($percent-sizes, 'h', 'height', '%'); // Height percentage
+@include generate-dimension-utilities-with-units($sizesBasedOnPx, 'hp', 'height', 'px'); // Height PX
+@include generate-dimension-utilities-with-units($percent-sizes, 'vh', 'height', 'vh'); // Viewport height
+@include generate-dimension-utilities-with-units($percent-sizes, 'maxH', 'max-height', '%'); // Max height percentage
+@include generate-dimension-utilities-with-units($percent-sizes, 'minH', 'min-height', '%'); // Min height percentage
+@include generate-font-utilities($sizes, $font-weights); // Font size and weight
+@include generate-flexbox-utilities($justify-options, 'justify-content', 'justify-content');
+@include generate-flexbox-utilities($align-items-options, 'align-items', 'align-items');
+@include generate-flexbox-utilities($flex-direction-options, 'flex-direction', 'flex-direction');
+
+.v-flex {
+  @include v-flex('column');
+}
+
+.d-flex {
+  @include v-flex('flex');
+}
+
+.h-flex {
+  @include v-flex('row');
+}
+
+.b-flex {
+  @include v-flex('block');
+}
+
+.inline-flex {
+  @include v-flex('inline-flex');
+}
+
+.flex-contents {
+  @include v-flex('contents');
+}
+
+.flex-contents {
+  display: contents;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.relative {
+  position: relative;
+}
+
+.ab {
+  @include breakpoint(md) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+  }
+}
+
+.rel {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
+.slot-left {
+  margin-left: auto;
+}
+
+.slot-right {
+  margin-right: auto;
+}
+
+.end {
+  display: flex;
+  justify-content: flex-end;
+
+  align-items: center;
+}
+
+.start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.slot-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.m0 {
+  margin: 0 !important;
+}
+
+.mt0 {
+  margin-top: 0 !important;
+}
+
+.mb0 {
+  margin-bottom: 0 !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.input-control-field.notes {
+  .mat-mdc-text-field-wrapper {
+    min-height: 90px;
+    align-items: flex-start;
+    font-size: 14px;
+    padding-left: 12px;
+  }
+
+  .mat-mdc-form-field-infix {
+    min-height: 90px !important;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  textarea.mat-mdc-input-element {
+    min-height: 90px !important;
+    max-height: 240px !important;
+    height: auto !important;
+    resize: none;
+    overflow-y: auto;
+  }
+}

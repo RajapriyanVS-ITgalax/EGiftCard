@@ -1,2 +1,64 @@
 // For information on how to create your own theme, please refer to:
 // https://ionicframework.com/docs/theming/
+
+:root {
+  /* Brand primary: #094e8c */
+  --ion-color-primary: #094e8c;
+  --ion-color-primary-rgb: 9, 78, 140;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #084479;
+  --ion-color-primary-tint: #226099;
+  --ion-color-secondary: #00ae9b;
+
+  --ion-color-danger: #c5000f;
+  --ion-color-danger-rgb: 197, 0, 15;
+  --ion-color-danger-contrast: #ffffff;
+  --ion-color-danger-contrast-rgb: 255, 255, 255;
+  --ion-color-danger-shade: #ad000d;
+  --ion-color-danger-tint: #cb1a27;
+
+  --ion-color-accent: #f7941d;
+  --ion-color-accent-rgb: 247, 148, 29;
+  --ion-color-accent-contrast: #ffffff;
+  --ion-color-accent-contrast-rgb: 255, 255, 255;
+  --ion-color-accent-shade: #d98219;
+  --ion-color-accent-tint: #f89f33;
+
+  /* App-level tokens */
+  --app-radius: 12px;
+  --app-control-height: 48px;
+  --app-spacing: 16px;
+}
+
+.ion-color-accent {
+  --ion-color-base: var(--ion-color-accent);
+  --ion-color-base-rgb: var(--ion-color-accent-rgb);
+  --ion-color-contrast: var(--ion-color-accent-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-accent-contrast-rgb);
+  --ion-color-shade: var(--ion-color-accent-shade);
+  --ion-color-tint: var(--ion-color-accent-tint);
+}
+
+.ion-color-primary {
+  --ion-color-base: var(--ion-color-primary);
+  --ion-color-base-rgb: var(--ion-color-primary-rgb);
+  --ion-color-contrast: var(--ion-color-primary-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-primary-contrast-rgb);
+  --ion-color-shade: var(--ion-color-primary-shade);
+  --ion-color-tint: var(--ion-color-primary-tint);
+}
+
+ion-content {
+  --color: var(--ion-color-primary);
+}
+
+ion-toolbar {
+  --background: var(--ion-color-primary-contrast);
+  border-bottom: 1px solid #e1e1e1;
+  // --color: var(--ion-color-primary-contrast);
+}
+
+.toolbar-container {
+  --background: red !important;
+}

@@ -1,0 +1,16 @@
+<ion-content [fullscreen]="true">
+  @if (order(); as o) {
+  <div class="center">
+    <span class="tick"><i class="ri-check-line"></i></span>
+    <h1>Payment Successful!</h1>
+    <p>Your payment has been completed.</p>
+    <div class="panel ref">
+      <p class="k">Order Reference</p>
+      <p class="v">{{ o.reference }}</p>
+      <p class="k">Total Paid</p>
+      <p class="v">${{ o.total }}.00</p>
+    </div>
+    <button type="button" class="pill-btn accent" (click)="next()">Continue</button>
+  </div>
+  }
+</ion-content>

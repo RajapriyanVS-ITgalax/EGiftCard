@@ -1,0 +1,10 @@
+:host {
+  display: block;
+  margin-bottom: var(--app-spacing);
+}
+
+ion-select {
+  --border-radius: var(--app-radius);
+  --highlight-color-focused: var(--ion-color-primary);
+  min-height: var(--app-control-height);
+}

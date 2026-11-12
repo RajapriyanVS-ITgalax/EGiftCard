@@ -1,0 +1,87 @@
+// Sizing Variables
+$sizes: 500; // Up to 5000px for spacing utilities
+$sizesBasedOnPx: 50,
+100,
+150,
+200,
+250,
+300,
+350,
+400,
+450,
+500,
+550,
+600,
+650,
+700,
+750,
+800,
+850,
+900,
+950,
+1000; // Specific pixel sizes for height utilities
+$percent-sizes: 10,
+20,
+25,
+33,
+50,
+66,
+75,
+80,
+90,
+100; // Percentage sizes for height utilities
+$font-weights: 100,
+200,
+300,
+400,
+500,
+600,
+700,
+800,
+900,
+1000; // Font weight values
+
+// Flexbox Justify Options
+$justify-options: (start: flex-start,
+    center: center,
+    end: flex-end,
+    between: space-between,
+    around: space-around,
+    evenly: space-evenly);
+
+// Flexbox Align Items Options
+$align-items-options: (start: flex-start,
+    center: center,
+    end: flex-end,
+    stretch: stretch,
+    baseline: baseline);
+
+// Flexbox Align Self Options
+$align-self-options: (auto: auto,
+    start: flex-start,
+    center: center,
+    end: flex-end,
+    stretch: stretch,
+    baseline: baseline);
+
+// Flexbox Direction Options
+$flex-direction-options: (row: row,
+    column: column,
+    row-reverse: row-reverse,
+    column-reverse: column-reverse);
+
+// Z-Index Levels
+$z-index: (dropdown: 1000,
+    sticky: 1020,
+    fixed: 1030,
+    modal: 1040,
+    popover: 1050,
+    tooltip: 1060);
+
+// Scrollbar Variables
+$scrollbar-width: 5px;
+$scrollbar-height: 10px;
+$scrollbar-track-color: #D9D9D9;
+$scrollbar-thumb-color: #6F6F6F;
+$scrollbar-border-width: 2px;
+$scrollbar-border-radius: 1rem;

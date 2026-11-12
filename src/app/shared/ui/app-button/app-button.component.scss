@@ -1,0 +1,24 @@
+:host {
+  display: block;
+}
+
+ion-button {
+  --border-radius: var(--app-radius);
+  min-height: var(--app-control-height);
+  text-transform: none;
+  font-weight: 600;
+
+  &.pill {
+    --border-radius: 999px;
+    min-height: 46px;
+  }
+
+  &.pill[fill='outline'] {
+    --border-width: 2px;
+  }
+}
+
+.btn-icon {
+  margin-right: 8px;
+  font-size: 18px;
+}

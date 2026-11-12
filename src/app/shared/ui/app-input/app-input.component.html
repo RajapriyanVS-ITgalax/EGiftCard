@@ -1,0 +1,28 @@
+<ion-label>
+  {{ label() }}
+  <span>
+    {{ isRequired ? ' *' : '' }}
+  </span>
+</ion-label>
+
+
+
+<ion-input fill="outline" [class.pill]="pill()" [labelPlacement]="pill() || !label() ? 'start' : 'stacked'"
+  [attr.aria-label]="label()" [type]="$any(effectiveType)" [placeholder]="placeholder()" [value]="value()"
+  [disabled]="disabled()" [clearInput]="clearable()" [maxlength]="maxlength()" [autocomplete]="$any(autocomplete())"
+  [class.ion-invalid]="!!errorText"
+  [class.ion-touched]="touched() || errorTrue() || !!ngControl?.touched || !!ngControl?.dirty"
+  [helperText]="errorText ? '' : helperText()" (ionInput)="onInput($event)" (ionBlur)="markTouched()">
+  @if (icon()) {
+  <i slot="start" class="lead-icon" [class]="icon()" aria-hidden="true"></i>
+  }
+  @if (type() === 'password') {
+  <button type="button" slot="end" class="toggle" [attr.aria-label]="showPassword() ? 'Hide password' : 'Show password'"
+    (click)="showPassword.set(!showPassword())">
+    <i [class]="showPassword() ? 'ri-eye-off-line' : 'ri-eye-line'"></i>
+  </button>
+  }
+</ion-input>
+@if (errorText) {
+<p class="field-error" role="alert">{{ errorText }}</p>
+}

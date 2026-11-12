@@ -1,0 +1,64 @@
+.items {
+  display: grid;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.summary {
+  margin-bottom: 16px;
+}
+
+.line-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.info {
+  flex: 1;
+
+  p {
+    margin: 0;
+  }
+}
+
+.name {
+  color: var(--ion-color-primary);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.price {
+  margin: 2px 0 6px;
+  color: var(--ion-color-accent);
+  font-weight: 700;
+}
+
+.qty {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--ion-color-primary);
+
+  button {
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    border: 1px solid #cfdde8;
+    border-radius: 50%;
+    background: #fff;
+    color: var(--ion-color-primary);
+  }
+}
+
+.remove {
+  border: 0;
+  background: none;
+  color: var(--ion-color-danger);
+  font-size: 20px;
+}
+
+a.pill-btn {
+  text-decoration: none;
+}

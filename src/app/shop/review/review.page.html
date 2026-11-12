@@ -1,0 +1,73 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <div class="bar">
+      <span class="brand"
+        style="display: flex; align-items: center; color: var(--ion-color-primary); font-weight: bold;">
+        <button type="button" class="back" aria-label="Back" (click)="back()">
+          <i class="ri-arrow-left-s-line"></i>
+        </button>
+        Review & Confirm
+      </span>
+    </div>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <div class="wrap">
+    <app-steps [current]="3"></app-steps>
+    <p class="title">Order Summary</p>
+
+    @for (item of cart.items(); track $index) {
+    <article class="preview" [attr.aria-label]="item.name + ' gift-card preview'">
+      <div class="art" [style.background-image]="item.image ? 'url(' + item.image + ')' : null">
+        <span class="amount">${{ item.amount }}.00@if (item.quantity > 1) { × {{ item.quantity }} }</span>
+        <div class="brand">
+          <span class="logo">{{ item.name.slice(0, 2).toUpperCase() }}</span>
+          <span><small>{{ item.packageName || 'Digital gift card' }}</small><b>{{ item.name }}</b></span>
+        </div>
+      </div>
+      <div class="note">
+        @if (checkout.recipient().mode === 'me') {
+        <p><b>Congratulations, {{ firstName }}!</b><br />You've sent yourself a gift card — enjoy!</p>
+        } @else {
+        <p><b>A gift for {{ firstName }}!</b><br />Someone special sent you a gift card.</p>
+        }
+        <p><small>Gifted by</small><br />{{ sender }}</p>
+        <p>
+          <small>For {{ checkout.recipient().name }}</small>@if (checkout.recipient().message) {<br />“{{
+          checkout.recipient().message }}”}
+        </p>
+      </div>
+    </article>
+    }
+
+    <p class="title">Recipient Details</p>
+    <div class="panel recipient">
+      <span class="avatar">{{ initials }}</span>
+      <div>
+        <p class="who">{{ checkout.recipient().name }}</p>
+        <p>{{ checkout.recipient().mobile }}</p>
+        @if (checkout.recipient().message) {
+        <p class="msg">{{ checkout.recipient().message }}</p>
+        }
+      </div>
+    </div>
+
+    <div class="panel total-box">
+      <div class="row total"><span>Total</span><span>${{ cart.total() }}.00</span></div>
+    </div>
+
+    <p class="title">Payment Method</p>
+    <div class="panel"><b>{{ checkout.payment() }}</b></div>
+
+    <app-checkbox class="terms" label="I agree to the Terms & Conditions" [formControl]="terms"></app-checkbox>
+    @if (terms.touched && terms.invalid) {
+    <p class="error">Please agree to the Terms & Conditions.</p>
+    }
+
+    <div class="actions">
+      <button type="button" class="pill-btn outline" (click)="back()">Back</button>
+      <button type="button" class="pill-btn accent" (click)="confirm()">Confirm Payment</button>
+    </div>
+    <p class="note-small">Preview: no real payment is taken.</p>
+  </div>
+</ion-content>

@@ -1,0 +1,15 @@
+:host {
+  display: block;
+  margin-bottom: var(--app-spacing);
+}
+
+ion-checkbox {
+  --checkbox-background: #ffffff;
+  --checkbox-background-checked: var(--ion-color-primary);
+  --border-color: #d1d5db;
+  --border-color-checked: var(--ion-color-primary);
+}
+
+.checkbox-icon {
+  background: #fff !important;
+}

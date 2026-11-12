@@ -1,0 +1,58 @@
+<ion-content [fullscreen]="true">
+  <div class="auth">
+    <button type="button" class="back" aria-label="Back" (click)="back()"><i class="ri-arrow-left-s-line"></i></button>
+
+    <div class="brand">
+      <img src="assets/images/logo.png" alt="" />
+      <span>Kauwai <small>EGift</small></span>
+    </div>
+
+    <h1>Create Your Account</h1>
+    <p class="subtitle">Register with your mobile number only.<br />Your email can be added later in your profile.</p>
+
+    <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+      <app-input
+        [pill]="true"
+        icon="ri-smartphone-line"
+        label="Mobile Number"
+        type="tel"
+        placeholder="Mobile Number"
+        formControlName="mobile"
+        [errorMessages]="{ required: 'Enter your mobile number', pattern: 'Enter a valid mobile number (7-10 digits)' }"
+      ></app-input>
+      <app-input
+        [pill]="true"
+        icon="ri-lock-line"
+        label="Password"
+        type="password"
+        placeholder="Password"
+        formControlName="password"
+      ></app-input>
+      <app-input
+        [pill]="true"
+        icon="ri-lock-line"
+        label="Confirm Password"
+        type="password"
+        placeholder="Confirm Password"
+        formControlName="confirm"
+        [errorMessages]="{ mismatch: 'Passwords do not match' }"
+      ></app-input>
+
+      <app-checkbox
+        class="check"
+        label="I agree to the Terms & Conditions and Privacy Policy"
+        formControlName="terms"
+      ></app-checkbox>
+      @if (form.controls.terms.touched && form.controls.terms.invalid) {
+      <p class="error">You must accept the terms to continue.</p>
+      } @if (error()) {
+      <p class="error">{{ error() }}</p>
+      }
+
+      <app-button type="submit" color="accent" [pill]="true">Continue</app-button>
+    </form>
+
+    <p class="switch">Already have an account? <a routerLink="/login" queryParamsHandling="preserve">Login</a></p>
+    <div class="wave"></div>
+  </div>
+</ion-content>

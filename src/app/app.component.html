@@ -1,3 +1,31 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  @if (auth.isLoggedIn()) {
+  <ion-menu contentId="main-content" side="start" class="drawer">
+    <ion-content>
+      <div class="drawer-body">
+        <div class="drawer-top">
+          <img src="assets/images/logo.png" alt="" />
+          <button type="button" class="x" aria-label="Close menu" (click)="closeMenu()">
+            <i class="ri-close-line"></i>
+          </button>
+        </div>
+        <a class="drawer-user" routerLink="/profile" (click)="closeMenu()">
+          <span class="avatar">{{ profile.initials() }}</span>
+          <span><b>{{ profile.profile().name }}</b><small>{{ profile.phone() }}</small></span>
+        </a>
+        <nav class="drawer-list" aria-label="Main menu">
+          @for (item of menuItems; track item.path) {
+          <a [routerLink]="item.path" routerLinkActive="active" (click)="closeMenu()">
+            <i [class]="item.icon"></i>{{ item.label }}<i class="ri-arrow-right-s-line chev"></i>
+          </a>
+          }
+          <!-- <button type="button" (click)="closeMenu(); logout.confirm()">
+            <i class="ri-logout-box-r-line"></i>Logout<i class="ri-arrow-right-s-line chev"></i>
+          </button> -->
+        </nav>
+      </div>
+    </ion-content>
+  </ion-menu>
+  }
+  <ion-router-outlet id="main-content"></ion-router-outlet>
 </ion-app>

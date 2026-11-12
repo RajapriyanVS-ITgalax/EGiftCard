@@ -1,0 +1,40 @@
+.center {
+  display: grid;
+  gap: 8px;
+  padding: 64px 24px 24px;
+  text-align: center;
+
+  p {
+    margin: 0;
+    color: #3b4a5a;
+    font-size: 13px;
+  }
+}
+
+.tick {
+  display: grid;
+  place-items: center;
+  width: 84px;
+  height: 84px;
+  margin: 0 auto 8px;
+  border-radius: 50%;
+  background: #12b5a0;
+  color: #fff;
+  font-size: 44px;
+}
+
+.ref {
+  margin: 16px 0;
+
+  .k {
+    color: var(--ion-color-medium);
+    font-size: 12px;
+  }
+
+  .v {
+    margin-bottom: 10px;
+    color: var(--ion-color-primary);
+    font-size: 18px;
+    font-weight: 700;
+  }
+}

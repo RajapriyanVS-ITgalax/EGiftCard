@@ -1,0 +1,19 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: var(--app-spacing);
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: var(--ion-color-primary);
+}
+
+.value {
+  font-size: 16px;
+  color: var(--ion-text-color);
+}

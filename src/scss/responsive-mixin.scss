@@ -1,0 +1,125 @@
+@use "sass:map";
+
+$breakpoints: (
+    xs: (min: 0px,
+        max: 575.98px),
+    sm: (min: 576px,
+        max: 767.98px),
+    md: (min: 768px,
+        max: 991.98px),
+    lg: (min: 992px,
+        max: 1199.98px),
+    xl: (min: 1200px,
+        max: 1399.98px),
+    xxl: (min: 1400px,
+        max: 1919.98px)
+);
+
+$breakpoints-height: (
+    sm: (min: 0px,
+        max: 399.98px),
+    md: (min: 400px,
+        max: 599.98px),
+    lg: (min: 600px,
+        max: 799.98px),
+    xl: (min: 800px,
+        max: 999.98px),
+    xxl: (min: 1000px,
+        max: 1199.98px)
+);
+
+@mixin breakpoint($token, $direction: min) {
+    $preset: map.get($breakpoints, $token);
+
+    @if $preset {
+        $min: map.get($preset, min);
+        $max: map.get($preset, max);
+
+        @if $direction ==min {
+            @include _emit-media(min-width, $min) {
+                @content;
+            }
+        }
+
+        @else if $direction ==max {
+            @include _emit-media(max-width, $max) {
+                @content;
+            }
+        }
+
+        @else {
+            @error "Unsupported direction `#{$direction}`. Use `min` or `max`.";
+        }
+    }
+
+    @else {
+        @if $direction ==min {
+            @include _emit-media(min-width, $token) {
+                @content;
+            }
+        }
+
+        @else if $direction ==max {
+            @include _emit-media(max-width, $token) {
+                @content;
+            }
+        }
+
+        @else {
+            @error "Unsupported direction `#{$direction}`. Use `min` or `max`.";
+        }
+    }
+}
+
+@mixin breakpointHeight($token, $direction: min) {
+    $preset: map.get($breakpoints-height, $token);
+
+    @if $preset {
+        $min: map.get($preset, min);
+        $max: map.get($preset, max);
+
+        @if $direction ==min {
+            @include _emit-media(min-height, $min) {
+                @content;
+            }
+        }
+
+        @else if $direction ==max {
+            @include _emit-media(max-height, $max) {
+                @content;
+            }
+        }
+
+        @else {
+            @error "Unsupported direction `#{$direction}`. Use `min` or `max`.";
+        }
+    }
+
+    @else {
+        @if $direction ==min {
+            @include _emit-media(min-height, $token) {
+                @content;
+            }
+        }
+
+        @else if $direction ==max {
+            @include _emit-media(max-height, $token) {
+                @content;
+            }
+        }
+
+        @else {
+            @error "Unsupported direction `#{$direction}`. Use `min` or `max`.";
+        }
+    }
+}
+
+@mixin _emit-media($feature, $value) {
+    @if $value ==null {
+        @error "Breakpoint value for `#{$feature}` cannot be null.";
+    }
+
+    @media (#{$feature}: $value) {
+        @content;
+    }
+}

@@ -1,0 +1,58 @@
+.methods {
+  display: grid;
+  gap: 10px;
+}
+
+.method {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid #cfdde8;
+  border-radius: 16px;
+  background: #fff;
+  color: var(--ion-color-primary);
+  text-align: left;
+
+  > i:first-child {
+    font-size: 24px;
+  }
+
+  span {
+    display: grid;
+    flex: 1;
+  }
+
+  b {
+    font-size: 14px;
+  }
+
+  small {
+    color: var(--ion-color-medium);
+    font-size: 12px;
+  }
+
+  .tick {
+    color: #b7c6d6;
+    font-size: 22px;
+  }
+
+  &.active {
+    border-color: var(--ion-color-primary);
+    box-shadow: 0 0 0 1px var(--ion-color-primary);
+
+    .tick {
+      color: var(--ion-color-primary);
+    }
+  }
+}
+
+.secure {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin: 16px 0;
+  color: #12806f;
+  font-size: 12px;
+}

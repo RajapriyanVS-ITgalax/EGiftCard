@@ -1,0 +1,19 @@
+<ion-select
+  fill="outline"
+  labelPlacement="floating"
+  interface="popover"
+  [label]="label() + (isRequired ? ' *' : '')"
+  [placeholder]="placeholder()"
+  [value]="value()"
+  [disabled]="disabled()"
+  [class.ion-invalid]="!!errorText"
+  [class.ion-touched]="touched()"
+  [errorText]="errorText"
+  [helperText]="helperText()"
+  (ionChange)="onValueChange($event)"
+  (ionBlur)="markTouched()"
+>
+  @for (option of options(); track option.value) {
+    <ion-select-option [value]="option.value">{{ option.label }}</ion-select-option>
+  }
+</ion-select>

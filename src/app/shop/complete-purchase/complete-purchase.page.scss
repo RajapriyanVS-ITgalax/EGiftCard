@@ -1,0 +1,29 @@
+.center {
+  display: grid;
+  gap: 12px;
+  padding: 32px 24px;
+  text-align: center;
+
+  p {
+    margin: 0 0 12px;
+    color: #3b4a5a;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.badge {
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: rgba(9, 78, 140, 0.1);
+  color: var(--ion-color-primary);
+  font-size: 34px;
+}

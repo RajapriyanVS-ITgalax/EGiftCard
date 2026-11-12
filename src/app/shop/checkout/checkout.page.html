@@ -1,0 +1,39 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <div class="bar">
+      <span class="brand"
+        style="display: flex; align-items: center; color: var(--ion-color-primary); font-weight: bold;">
+        <button type="button" class="back" aria-label="Back" (click)="back()">
+          <i class="ri-arrow-left-s-line"></i>
+        </button>
+        Checkout
+      </span>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="wrap">
+    <app-steps [current]="1"></app-steps>
+
+    <div class="toggle">
+      <button type="button" [class.active]="mode().mode === 'me'" (click)="setMode('me')">Send to Me</button>
+      <button type="button" [class.active]="mode().mode === 'other'" (click)="setMode('other')">Send to Someone
+        Else</button>
+    </div>
+
+    <form [formGroup]="form" (ngSubmit)="next()" novalidate>
+      <app-input [pill]="true" icon="ri-user-line" label="Recipient Name" placeholder="Recipient Name (required)"
+        formControlName="name" [errorMessages]="{ required: 'Enter the recipient name' }"></app-input>
+      <app-input [pill]="true" icon="ri-smartphone-line" label="Mobile Number" type="tel"
+        placeholder="Mobile Number (required)" formControlName="mobile"
+        [errorMessages]="{ required: 'Enter the mobile number', pattern: 'Enter a valid mobile number (7-10 digits)' }"></app-input>
+
+      <textarea class="message" rows="3" formControlName="message" placeholder="Message (optional)"
+        [attr.maxlength]="maxMessage" aria-label="Message"></textarea>
+      <p class="count">{{ form.controls.message.value.length }}/{{ maxMessage }}</p>
+
+      <button type="submit" class="pill-btn accent">Continue</button>
+    </form>
+  </div>
+</ion-content>

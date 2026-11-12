@@ -10,20 +10,20 @@
  */
 
 /* Core CSS required for Ionic components to work properly */
-@import "@ionic/angular/css/core.css";
+@import '@ionic/angular/css/core.css';
 
 /* Basic CSS for apps built with Ionic */
-@import "@ionic/angular/css/normalize.css";
-@import "@ionic/angular/css/structure.css";
-@import "@ionic/angular/css/typography.css";
-@import "@ionic/angular/css/display.css";
+@import '@ionic/angular/css/normalize.css';
+@import '@ionic/angular/css/structure.css';
+@import '@ionic/angular/css/typography.css';
+@import '@ionic/angular/css/display.css';
 
 /* Optional CSS utils that can be commented out */
-@import "@ionic/angular/css/padding.css";
-@import "@ionic/angular/css/float-elements.css";
-@import "@ionic/angular/css/text-alignment.css";
-@import "@ionic/angular/css/text-transformation.css";
-@import "@ionic/angular/css/flex-utils.css";
+@import '@ionic/angular/css/padding.css';
+@import '@ionic/angular/css/float-elements.css';
+@import '@ionic/angular/css/text-alignment.css';
+@import '@ionic/angular/css/text-transformation.css';
+@import '@ionic/angular/css/flex-utils.css';
 
 /**
  * Ionic Dark Mode
@@ -35,3 +35,43 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import '@ionic/angular/css/palettes/dark.system.css';
+
+/* Input placeholder and label colour */
+ion-input {
+  --placeholder-color: #000;
+  --placeholder-opacity: 1;
+
+  .label-text,
+  .label-text-wrapper {
+    color: #000 !important;
+    opacity: 1 !important;
+  }
+}
+
+.input-fill-outline.sc-ion-input-md-h {
+  min-height: 36px !important;
+}
+.input-fill-outline.sc-ion-input-md-h .input-outline-notch.sc-ion-input-md {
+  display: none;
+}
+
+// .sc-ion-input-md-s > [slot='start']:last-of-type {
+//   -webkit-margin-end: 0px !important;
+//   margin-inline-end: 0px !important;
+// }
+
+@import 'scss/helper.scss';
+
+*,
+ion-content::part(scroll) {
+  scrollbar-width: none;
+}
+
+*::-webkit-scrollbar,
+ion-content::part(scroll)::-webkit-scrollbar {
+  display: none;
+}
+
+.header-settings {
+  text-decoration: none;
+}
